@@ -2,173 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ELOIR — Modern Luxury Redefined</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ELOIR® — Modern Luxury Redefined</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:#000;
-      color:#fff;
-      overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
-    a{text-decoration:none;color:inherit}
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* HERO */
-    .hero{
-      height:100vh;
+    .hero {
+      height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-        url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      animation:fade 2s ease;
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .logo{
-      font-size:72px;
-      letter-spacing:14px;
-      font-weight:500;
+    .hero-inner {
+      animation: fadeUp 1.8s ease forwards;
     }
 
-    .tagline{
-      margin-top:14px;
-      font-size:14px;
-      letter-spacing:4px;
-      color:#ccc;
+    .logo {
+      font-size: 64px;
+      letter-spacing: 10px;
+      font-weight: 400;
     }
 
-    .line{
-      width:90px;
-      height:1px;
-      background:#666;
-      margin:40px 0;
+    .tagline {
+      margin-top: 18px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      opacity: 0.75;
     }
 
-    .nav{
-      display:flex;
-      gap:90px;
-      font-size:14px;
-      letter-spacing:5px;
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #fff;
+      margin: 35px auto;
+      opacity: 0.4;
     }
 
-    .nav a{
-      opacity:.8;
-      transition:.3s;
+    .hero-nav {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 3px;
     }
 
-    .nav a:hover{opacity:1}
-
-    section{
-      min-height:100vh;
-      padding:120px 8%;
+    .hero-nav a {
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
     }
 
-    .title{
-      font-size:36px;
-      letter-spacing:6px;
-      margin-bottom:50px;
+    .hero-nav a:hover {
+      opacity: 1;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:50px;
+    /* SECTION BASE */
+    section {
+      padding: 120px 20px;
+      text-align: center;
     }
 
-    .card{
-      border:1px solid #222;
-      padding:70px 20px;
-      text-align:center;
-      transition:.4s;
+    h2 {
+      font-size: 28px;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
     }
 
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#555;
+    p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 15px;
+      line-height: 1.9;
+      opacity: 0.75;
     }
 
-    .card h3{
-      font-size:16px;
-      letter-spacing:3px;
-      margin-bottom:12px;
+    /* COLLECTIONS */
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 80px auto 0;
     }
 
-    .card p{
-      font-size:13px;
-      color:#aaa;
-      margin-bottom:22px;
+    .card {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 60px 20px;
+      transition: all 0.4s ease;
     }
 
-    .btn{
-      border:1px solid #fff;
-      padding:10px 26px;
-      font-size:12px;
-      letter-spacing:3px;
-      transition:.3s;
+    .card:hover {
+      background: #fff;
+      color: #000;
     }
 
-    .btn:hover{
-      background:#fff;
-      color:#000;
+    .card h3 {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
     }
 
-    @keyframes fade{
-      from{opacity:0;transform:translateY(40px)}
-      to{opacity:1;transform:translateY(0)}
+    .card span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.7;
     }
 
-    @media(max-width:768px){
-      .logo{font-size:44px;letter-spacing:8px}
-      .nav{gap:40px}
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 14px 40px;
+      border: 1px solid #fff;
+      font-size: 12px;
+      letter-spacing: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 80px 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.6;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 42px;
+        letter-spacing: 6px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- HERO -->
   <div class="hero">
-    <!-- Replace text with logo image later if needed -->
-    <div class="logo">ELOIR</div>
-    <div class="tagline">MODERN LUXURY REDEFINED</div>
-    <div class="line"></div>
-    <div class="nav">
-      <a href="#men">MEN</a>
-      <a href="#women">WOMEN</a>
+    <div class="hero-inner">
+      <!-- Replace with logo image later if needed -->
+      <div class="logo">ELOIR</div>
+      <div class="tagline">MODERN LUXURY REDEFINED</div>
+
+      <div class="divider"></div>
+
+      <!-- Shopify links -->
+      <div class="hero-nav">
+        <a href="https://YOUR-SHOPIFY-LINK/collections/men">MEN</a>
+        <a href="https://YOUR-SHOPIFY-LINK/collections/women">WOMEN</a>
+      </div>
     </div>
   </div>
 
+  <!-- BRAND STORY -->
+  <section>
+    <h2>OUR PHILOSOPHY</h2>
+    <p>
+      ELOIR is built on restraint, precision, and identity.
+      Created for those who value presence over noise,
+      quality over quantity, and timeless design over trends.
+      <br><br>
+      Every garment is intentional.
+      Every detail speaks quietly — but with authority.
+    </p>
+  </section>
+
   <!-- MEN -->
-  <section id="men">
-    <div class="title">MEN</div>
-    <div class="grid">
-      <div class="card"><h3>T-SHIRTS</h3><p>Luxury everyday wear</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>HOODIES</h3><p>Minimal premium comfort</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>JACKETS</h3><p>Bold modern layers</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>SHIRTS</h3><p>Refined essentials</p><a class="btn">SHOP</a></div>
+  <section>
+    <h2>MEN</h2>
+    <div class="collections">
+      <div class="card"><h3>T-SHIRTS</h3><span>ESSENTIALS</span></div>
+      <div class="card"><h3>HOODIES</h3><span>STRUCTURED</span></div>
+      <div class="card"><h3>JACKETS</h3><span>STATEMENT</span></div>
+      <div class="card"><h3>SHIRTS</h3><span>REFINED</span></div>
     </div>
+    <a class="btn" href="https://YOUR-SHOPIFY-LINK/collections/men">SHOP MEN</a>
   </section>
 
   <!-- WOMEN -->
-  <section id="women">
-    <div class="title">WOMEN</div>
-    <div class="grid">
-      <div class="card"><h3>T-SHIRTS</h3><p>Elegant silhouettes</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>HOODIES</h3><p>Luxury comfort wear</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>JACKETS</h3><p>Statement outerwear</p><a class="btn">SHOP</a></div>
-      <div class="card"><h3>SHIRTS</h3><p>Modern refined fits</p><a class="btn">SHOP</a></div>
+  <section>
+    <h2>WOMEN</h2>
+    <div class="collections">
+      <div class="card"><h3>T-SHIRTS</h3><span>MODERN</span></div>
+      <div class="card"><h3>HOODIES</h3><span>MINIMAL</span></div>
+      <div class="card"><h3>JACKETS</h3><span>ELEVATED</span></div>
+      <div class="card"><h3>SHIRTS</h3><span>TIMELESS</span></div>
     </div>
+    <a class="btn" href="https://YOUR-SHOPIFY-LINK/collections/women">SHOP WOMEN</a>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 ELOIR®. All rights reserved.
+  </footer>
 
 </body>
 </html>
