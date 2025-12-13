@@ -3,156 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <title>ELOIR — Modern Luxury Redefined</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ELOIR — Modern Luxury Redefined. Premium men and women clothing." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
+    a{text-decoration:none;color:inherit}
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+        url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      animation:fade 2s ease;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .logo{
+      font-size:72px;
+      letter-spacing:14px;
+      font-weight:500;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      animation: fadeIn 2s ease;
+    .tagline{
+      margin-top:14px;
+      font-size:14px;
+      letter-spacing:4px;
+      color:#ccc;
     }
 
-    .logo {
-      font-size: 72px;
-      letter-spacing: 12px;
-      font-weight: 500;
+    .line{
+      width:90px;
+      height:1px;
+      background:#666;
+      margin:40px 0;
     }
 
-    .tagline {
-      margin-top: 15px;
-      font-size: 14px;
-      letter-spacing: 4px;
-      color: #aaa;
+    .nav{
+      display:flex;
+      gap:90px;
+      font-size:14px;
+      letter-spacing:5px;
     }
 
-    .divider {
-      width: 80px;
-      height: 1px;
-      background: #555;
-      margin: 40px 0;
+    .nav a{
+      opacity:.8;
+      transition:.3s;
     }
 
-    .entry {
-      display: flex;
-      gap: 80px;
-      font-size: 14px;
-      letter-spacing: 4px;
+    .nav a:hover{opacity:1}
+
+    section{
+      min-height:100vh;
+      padding:120px 8%;
     }
 
-    .entry a {
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
+    .title{
+      font-size:36px;
+      letter-spacing:6px;
+      margin-bottom:50px;
     }
 
-    .entry a:hover {
-      opacity: 1;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:50px;
     }
 
-    /* ===== SECTIONS ===== */
-    section {
-      min-height: 100vh;
-      padding: 120px 8%;
+    .card{
+      border:1px solid #222;
+      padding:70px 20px;
+      text-align:center;
+      transition:.4s;
     }
 
-    .section-title {
-      font-size: 36px;
-      letter-spacing: 6px;
-      margin-bottom: 40px;
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#555;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
+    .card h3{
+      font-size:16px;
+      letter-spacing:3px;
+      margin-bottom:12px;
     }
 
-    .product {
-      border: 1px solid #222;
-      padding: 60px 20px;
-      text-align: center;
-      transition: transform 0.4s ease, border 0.4s ease;
+    .card p{
+      font-size:13px;
+      color:#aaa;
+      margin-bottom:22px;
     }
 
-    .product:hover {
-      transform: translateY(-10px);
-      border-color: #555;
+    .btn{
+      border:1px solid #fff;
+      padding:10px 26px;
+      font-size:12px;
+      letter-spacing:3px;
+      transition:.3s;
     }
 
-    .product h3 {
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+    .btn:hover{
+      background:#fff;
+      color:#000;
     }
 
-    .product p {
-      font-size: 13px;
-      color: #aaa;
-      margin-bottom: 20px;
+    @keyframes fade{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
-    .btn {
-      border: 1px solid #fff;
-      padding: 10px 22px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width: 768px) {
-      .logo {
-        font-size: 42px;
-        letter-spacing: 8px;
-      }
-
-      .entry {
-        gap: 40px;
-      }
+    @media(max-width:768px){
+      .logo{font-size:44px;letter-spacing:8px}
+      .nav{gap:40px}
     }
   </style>
 </head>
@@ -160,10 +138,11 @@
 
   <!-- HERO -->
   <div class="hero">
+    <!-- Replace text with logo image later if needed -->
     <div class="logo">ELOIR</div>
     <div class="tagline">MODERN LUXURY REDEFINED</div>
-    <div class="divider"></div>
-    <div class="entry">
+    <div class="line"></div>
+    <div class="nav">
       <a href="#men">MEN</a>
       <a href="#women">WOMEN</a>
     </div>
@@ -171,55 +150,23 @@
 
   <!-- MEN -->
   <section id="men">
-    <div class="section-title">MEN</div>
-    <div class="products">
-      <div class="product">
-        <h3>T-SHIRTS</h3>
-        <p>Premium everyday essentials</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>HOODIES</h3>
-        <p>Minimal luxury comfort</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>JACKETS</h3>
-        <p>Statement outerwear</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>COMPLETE WEAR</h3>
-        <p>Curated looks</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
+    <div class="title">MEN</div>
+    <div class="grid">
+      <div class="card"><h3>T-SHIRTS</h3><p>Luxury everyday wear</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>HOODIES</h3><p>Minimal premium comfort</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>JACKETS</h3><p>Bold modern layers</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>SHIRTS</h3><p>Refined essentials</p><a class="btn">SHOP</a></div>
     </div>
   </section>
 
   <!-- WOMEN -->
   <section id="women">
-    <div class="section-title">WOMEN</div>
-    <div class="products">
-      <div class="product">
-        <h3>T-SHIRTS</h3>
-        <p>Refined silhouettes</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>HOODIES</h3>
-        <p>Luxury comfort wear</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>JACKETS</h3>
-        <p>Bold modern layers</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
-      <div class="product">
-        <h3>COMPLETE WEAR</h3>
-        <p>Designed collections</p>
-        <a class="btn" href="#">SHOP</a>
-      </div>
+    <div class="title">WOMEN</div>
+    <div class="grid">
+      <div class="card"><h3>T-SHIRTS</h3><p>Elegant silhouettes</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>HOODIES</h3><p>Luxury comfort wear</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>JACKETS</h3><p>Statement outerwear</p><a class="btn">SHOP</a></div>
+      <div class="card"><h3>SHIRTS</h3><p>Modern refined fits</p><a class="btn">SHOP</a></div>
     </div>
   </section>
 
