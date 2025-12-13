@@ -1,108 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eloir — Luxury Fashion</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELOIR — Ultra Luxury Fashion</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        body {
-            background: #0b0b0b;
-            color: #ffffff;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-        header {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(180deg, #000000, #111111);
-        }
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 4px;
-            font-weight: 600;
-        }
+    /* Full Screen Hero */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
 
-        p {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #cfcfcf;
-        }
+    .logo {
+      font-size: 5rem;
+      letter-spacing: 12px;
+      font-weight: 500;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 35px;
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
+    .tagline {
+      margin-top: 20px;
+      font-size: 1rem;
+      letter-spacing: 4px;
+      opacity: 0.7;
+    }
 
-        .btn:hover {
-            background: #ffffff;
-            color: #000000;
-        }
+    /* Divider */
+    .line {
+      width: 80px;
+      height: 1px;
+      background: white;
+      margin: 40px 0;
+      opacity: 0.5;
+    }
 
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
+    /* Category Section */
+    .categories {
+      display: flex;
+      gap: 60px;
+      margin-top: 20px;
+    }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+    .cat {
+      font-size: 1.2rem;
+      letter-spacing: 6px;
+      cursor: pointer;
+      position: relative;
+    }
 
-        section p {
-            max-width: 700px;
-            margin: auto;
-            color: #bdbdbd;
-            line-height: 1.7;
-        }
+    .cat::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      background: white;
+      left: 0;
+      bottom: -6px;
+      transition: width 0.4s ease;
+    }
 
-        footer {
-            padding: 30px;
-            text-align: center;
-            background: #000000;
-            color: #777;
-        }
-    </style>
+    .cat:hover::after {
+      width: 100%;
+    }
+
+    /* Fade animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 3rem;
+        letter-spacing: 8px;
+      }
+
+      .categories {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <div>
-        <h1>ELOIR</h1>
-        <p>Minimal • Premium • Timeless</p>
-        <a href="#" class="btn">EXPLORE</a>
+  <section class="hero">
+    <div class="logo">ELOIR</div>
+    <div class="tagline">ULTRA LUXURY ESSENTIALS</div>
+
+    <div class="line"></div>
+
+    <div class="categories">
+      <div class="cat">MEN</div>
+      <div class="cat">WOMEN</div>
     </div>
-</header>
-
-<section>
-    <h2>About Eloir</h2>
-    <p>
-        Eloir is a modern luxury fashion brand focused on premium quality,
-        minimal design, and timeless style.  
-        Designed for those who believe less is more.
-    </p>
-</section>
-
-<footer>
-    © 2025 Eloir. All Rights Reserved.
-</footer>
+  </section>
 
 </body>
 </html>
+
