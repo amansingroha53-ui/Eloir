@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>ELOIR — Ultra Luxury</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ELOIR — Ultra Luxury Fashion</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -22,109 +22,122 @@
       overflow-x: hidden;
     }
 
-    /* Full Screen Hero */
-    .hero {
+    section {
       height: 100vh;
       width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      flex-direction: column;
       text-align: center;
-      animation: fadeIn 2s ease;
+      padding: 40px;
     }
 
-    .logo {
-      font-size: 5rem;
+    /* HERO */
+    .hero h1 {
+      font-size: 64px;
       letter-spacing: 12px;
-      font-weight: 500;
+      font-weight: 400;
+      animation: fadeIn 2s ease forwards;
     }
 
-    .tagline {
+    .hero p {
       margin-top: 20px;
-      font-size: 1rem;
       letter-spacing: 4px;
-      opacity: 0.7;
+      font-size: 12px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
     }
 
-    /* Divider */
-    .line {
-      width: 80px;
+    .divider {
+      width: 60px;
       height: 1px;
-      background: white;
-      margin: 40px 0;
-      opacity: 0.5;
+      background: #777;
+      margin: 40px auto;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1.5s;
     }
 
-    /* Category Section */
-    .categories {
+    .nav {
       display: flex;
-      gap: 60px;
+      gap: 40px;
       margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2s;
     }
 
-    .cat {
-      font-size: 1.2rem;
+    .nav a {
+      color: white;
+      text-decoration: none;
       letter-spacing: 6px;
-      cursor: pointer;
-      position: relative;
+      font-size: 12px;
+      transition: opacity 0.3s;
     }
 
-    .cat::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 1px;
-      background: white;
-      left: 0;
-      bottom: -6px;
-      transition: width 0.4s ease;
+    .nav a:hover {
+      opacity: 0.6;
     }
 
-    .cat:hover::after {
-      width: 100%;
+    /* MEN & WOMEN */
+    .section-title {
+      font-size: 48px;
+      letter-spacing: 10px;
+      font-weight: 300;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s ease;
     }
 
-    /* Fade animation */
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .logo {
-        font-size: 3rem;
-        letter-spacing: 8px;
-      }
-
-      .categories {
-        flex-direction: column;
-        gap: 30px;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="logo">ELOIR</div>
-    <div class="tagline">ULTRA LUXURY ESSENTIALS</div>
-
-    <div class="line"></div>
-
-    <div class="categories">
-      <div class="cat">MEN</div>
-      <div class="cat">WOMEN</div>
+    <h1>ELOIR</h1>
+    <p>ULTRA LUXURY ESSENTIALS</p>
+    <div class="divider"></div>
+    <div class="nav">
+      <a href="#men">MEN</a>
+      <a href="#women">WOMEN</a>
     </div>
   </section>
 
+  <!-- MEN -->
+  <section id="men">
+    <h2 class="section-title">MEN</h2>
+  </section>
+
+  <!-- WOMEN -->
+  <section id="women">
+    <h2 class="section-title">WOMEN</h2>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.section-title').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>
-
