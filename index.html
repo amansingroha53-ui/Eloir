@@ -2,142 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ELOIR — Ultra Luxury</title>
+  <title>ELOIR — Modern Luxury Redefined</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ELOIR — Modern Luxury Redefined. Premium men and women clothing." />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
+      font-family: 'Inter', sans-serif;
       background: #000;
       color: #fff;
       overflow-x: hidden;
     }
 
-    section {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
       height: 100vh;
       width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 40px;
+      animation: fadeIn 2s ease;
     }
 
-    /* HERO */
-    .hero h1 {
-      font-size: 64px;
+    .logo {
+      font-size: 72px;
       letter-spacing: 12px;
-      font-weight: 400;
-      animation: fadeIn 2s ease forwards;
+      font-weight: 500;
     }
 
-    .hero p {
-      margin-top: 20px;
+    .tagline {
+      margin-top: 15px;
+      font-size: 14px;
       letter-spacing: 4px;
-      font-size: 12px;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 1s;
+      color: #aaa;
     }
 
     .divider {
-      width: 60px;
+      width: 80px;
       height: 1px;
-      background: #777;
-      margin: 40px auto;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 1.5s;
+      background: #555;
+      margin: 40px 0;
     }
 
-    .nav {
+    .entry {
       display: flex;
-      gap: 40px;
-      margin-top: 20px;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 2s;
+      gap: 80px;
+      font-size: 14px;
+      letter-spacing: 4px;
     }
 
-    .nav a {
-      color: white;
-      text-decoration: none;
-      letter-spacing: 6px;
-      font-size: 12px;
-      transition: opacity 0.3s;
+    .entry a {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
     }
 
-    .nav a:hover {
-      opacity: 0.6;
-    }
-
-    /* MEN & WOMEN */
-    .section-title {
-      font-size: 48px;
-      letter-spacing: 10px;
-      font-weight: 300;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1.2s ease;
-    }
-
-    .visible {
+    .entry a:hover {
       opacity: 1;
-      transform: translateY(0);
     }
 
+    /* ===== SECTIONS ===== */
+    section {
+      min-height: 100vh;
+      padding: 120px 8%;
+    }
+
+    .section-title {
+      font-size: 36px;
+      letter-spacing: 6px;
+      margin-bottom: 40px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .product {
+      border: 1px solid #222;
+      padding: 60px 20px;
+      text-align: center;
+      transition: transform 0.4s ease, border 0.4s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      border-color: #555;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      border: 1px solid #fff;
+      padding: 10px 22px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ===== ANIMATIONS ===== */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+      .logo {
+        font-size: 42px;
+        letter-spacing: 8px;
+      }
+
+      .entry {
+        gap: 40px;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>ELOIR</h1>
-    <p>ULTRA LUXURY ESSENTIALS</p>
+  <div class="hero">
+    <div class="logo">ELOIR</div>
+    <div class="tagline">MODERN LUXURY REDEFINED</div>
     <div class="divider"></div>
-    <div class="nav">
+    <div class="entry">
       <a href="#men">MEN</a>
       <a href="#women">WOMEN</a>
     </div>
-  </section>
+  </div>
 
   <!-- MEN -->
   <section id="men">
-    <h2 class="section-title">MEN</h2>
+    <div class="section-title">MEN</div>
+    <div class="products">
+      <div class="product">
+        <h3>T-SHIRTS</h3>
+        <p>Premium everyday essentials</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>HOODIES</h3>
+        <p>Minimal luxury comfort</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>JACKETS</h3>
+        <p>Statement outerwear</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>COMPLETE WEAR</h3>
+        <p>Curated looks</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+    </div>
   </section>
 
   <!-- WOMEN -->
   <section id="women">
-    <h2 class="section-title">WOMEN</h2>
+    <div class="section-title">WOMEN</div>
+    <div class="products">
+      <div class="product">
+        <h3>T-SHIRTS</h3>
+        <p>Refined silhouettes</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>HOODIES</h3>
+        <p>Luxury comfort wear</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>JACKETS</h3>
+        <p>Bold modern layers</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+      <div class="product">
+        <h3>COMPLETE WEAR</h3>
+        <p>Designed collections</p>
+        <a class="btn" href="#">SHOP</a>
+      </div>
+    </div>
   </section>
-
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('.section-title').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
 
 </body>
 </html>
